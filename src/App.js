@@ -70,6 +70,12 @@ const App = ({ signOut }) => {
 
   return (
     <View className="App">
+    <View
+      name="image"
+      as="input"
+      type="file"
+      style={{ alignSelf: "end" }}
+    />
       <Heading level={1}>My Notes App</Heading>
       <View as="form" margin="3rem 0" onSubmit={createNote}>
         <Flex direction="row" justifyContent="center">
@@ -113,6 +119,7 @@ const App = ({ signOut }) => {
                  alt={`visual aid for ${notes.name}`}
                  style={{ width: 400 }}
                />
+              )}
             <Button variation="link" onClick={() => deleteNote(note)}>
               Delete note
             </Button>
@@ -120,13 +127,8 @@ const App = ({ signOut }) => {
         ))}
       </View>
       <Button onClick={signOut}>Sign Out</Button>
-    </View>
-    <View
-      name="image"
-      as="input"
-      type="file"
-      style={{ alignSelf: "end" }}
-    />
+      </View>
+
   );
 };
 
